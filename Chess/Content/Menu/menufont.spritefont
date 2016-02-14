@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Graphics="Microsoft.Xna.Framework.Content.Pipeline.Graphics">
+	<Asset Type="LocalizationPipeline.LocalizedFontDescription">
+		<FontName>Comic Sans MS</FontName>
+		<Size>23</Size>
+		<Spacing>2</Spacing>
+		<Style>Regular</Style>
+		<CharacterRegions>
+			<CharacterRegion>
+				<Start>&#32;</Start>
+				<End>&#126;</End>
+			</CharacterRegion>
+		</CharacterRegions>
+    
+    <!--
+    This information is not part of a normal .spritefont file, but was added by our
+    custom LocalizedFontDescription class, and used by the LocalizedFontProcessor.
+    Rather than having to manually specify hundreds of different character regions,
+    we can simply tell the processor what .resx files our game is going to load text
+    from. The processor will scan these resources, see what characters they use, and
+    automatically add the necessary characters to the font. This is especially useful
+    for languages such as Japanese and Korean, which have potentially thousands of
+    different characters, although games typically only use a small fraction of these.
+    Building only the characters we need is far more efficient than if we tried to
+    include the entire CJK character region.
+    -->
+    <ResourceFiles>
+      <Resx>..\Localization\Strings.resx</Resx>
+      <Resx>..\Localization\Strings.ru.resx</Resx>
+      <Resx>..\Localization\Strings.uk.resx</Resx>
+    </ResourceFiles>
+    
+	</Asset>
+</XnaContent>
