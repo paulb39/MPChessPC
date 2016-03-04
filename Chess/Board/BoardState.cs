@@ -209,7 +209,7 @@ namespace Chess.Board
 
             #endregion
 
-            /* Check if king on attack cell on copy boardState */
+            /* Check if king on attack cell on copy boardState <- still needed?*/
             if (CanAttackOnCopyBoard(GetKingPositionOnCopy(CurrentMoveColor))) // king can be attacked?
             {
                 return false;
@@ -276,11 +276,14 @@ namespace Chess.Board
 
             // Alternate move. Fullmove number
             if (CurrentMoveColor == FigureColors.White)
-                CurrentMoveColor = FigureColors.Black;
-            else
+            {
+                CurrentMoveColor = FigureColors.Black; //TODO need logic to set for MP/saving
+                GameState.CurrentPlayerMove = FigureColors.Black;
+            } else
             {
                 fullmoveNumber++;
                 CurrentMoveColor = FigureColors.White;
+                GameState.CurrentPlayerMove = FigureColors.White;
             }
 
             // Halmove clock

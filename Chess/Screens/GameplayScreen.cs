@@ -420,6 +420,8 @@ namespace Chess.Screens
 
             #region Cell highlight
 
+            DrawGameInfo(gameTime); //TODO Message logic - add if in check, players name etc
+
             // Where we want to draw?
             CellHighlightPosition();
             // Let's draw!
@@ -457,6 +459,31 @@ namespace Chess.Screens
             // If the game is transitioning on or off, fade it out to black.
             if (TransitionPosition > 0)
                 ScreenManager.FadeBackBufferToBlack(255 - TransitionAlpha);
+        }
+
+        private void DrawGameInfo(GameTime gameTime) //TODO add if in check etc
+        {
+            SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
+            SpriteFont font = ScreenManager.Font;
+
+            var currentPlayerMessage = (GameState.CurrentPlayerMove == FigureColors.White) ? "Your move!" : "Opponent's turn";
+            Console.WriteLine(currentPlayerMessage);
+
+            //TODO add null logic
+            MenuEntry gameInfoStatus = new MenuEntry(currentPlayerMessage); // different class?
+            gameInfoStatus.Selected += (sender, e) => { Console.WriteLine("You clicked the info text"); };
+
+            //Vector2 position = new Vector2(100, 150);
+            //Vector2 origin = new Vector2(0, font.LineSpacing / 2);
+            var viewport = ScreenManager.GraphicsDevice.Viewport;
+            Vector2 position =  new Vector2((viewport.Width / 2f) - 75, viewport.Height / 100f);
+            Console.WriteLine(position);
+
+            spriteBatch.Begin();
+            spriteBatch.DrawString(font, currentPlayerMessage, position, Color.Red);
+            spriteBatch.End();
+
+//            gameInfoStatus.Draw((this as MenuScreen, position, false, gameTime);
         }
 
         /// <summary>
