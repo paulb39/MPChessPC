@@ -98,8 +98,8 @@ namespace Chess.Screens
         /// <summary>
         /// Draws the menu entry. This can be overridden to customize the appearance.
         /// </summary>
-        public void Draw(MenuScreen screen, Vector2 position,
-                         bool isSelected, GameTime gameTime)
+        public void Draw(GameScreen screen, Vector2 position, 
+                         bool isSelected, GameTime gameTime) //TODO screen was changed from menuscreen <- test!
         {
             // Draw the selected entry in yellow, otherwise white.
             Color color = isSelected ? Color.Yellow : Color.White;

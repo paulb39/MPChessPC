@@ -160,6 +160,7 @@
     <Compile Include="Core\Camera.cs" />
     <Compile Include="Board\BoardState.cs" />
     <Compile Include="Core\ChessGame.cs" />
+    <Compile Include="Screens\AboutScreen.cs" />
     <Compile Include="Screens\EventClass.cs" />
     <Compile Include="Board\Figures\Pawn.cs" />
     <Compile Include="Board\Figures\King.cs" />
@@ -195,12 +196,15 @@
     <Compile Include="Screens\GameplayScreen.cs" />
     <Compile Include="Screens\ChooseFigureBoxScreen.cs" />
     <Compile Include="Screens\LoadingScreen.cs" />
+    <Compile Include="Screens\LoginMenuScreen.cs" />
+    <Compile Include="Screens\MainGamesScreen.cs" />
     <Compile Include="Screens\MainMenuScreen.cs" />
     <Compile Include="Screens\MenuEntry.cs" />
     <Compile Include="Screens\MenuScreen.cs" />
     <Compile Include="Screens\MessageBoxScreen.cs" />
     <Compile Include="Screens\OptionsMenuScreen.cs" />
     <Compile Include="Screens\PauseMenuScreen.cs" />
+    <Compile Include="Screens\SelectableText.cs" />
     <Compile Include="Tests\BoardStateTest.cs" />
     <Compile Include="Tests\KnightTest.cs" />
     <Compile Include="Tests\KingTest.cs" />

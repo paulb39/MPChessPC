@@ -39,7 +39,9 @@ namespace Chess.Core
             Components.Add(screenManager);
             // Activate the first screens.
             screenManager.AddScreen(new BackgroundScreen());
-            screenManager.AddScreen(new MainMenuScreen());
+           screenManager.AddScreen(new LoginMenuScreen());
+           // screenManager.AddScreen(new MainMenuScreen());
+
 
             Window.AllowUserResizing = true;
             Window.ClientSizeChanged += WindowSizeChanged;

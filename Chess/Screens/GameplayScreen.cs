@@ -467,23 +467,19 @@ namespace Chess.Screens
             SpriteFont font = ScreenManager.Font;
 
             var currentPlayerMessage = (GameState.CurrentPlayerMove == FigureColors.White) ? "Your move!" : "Opponent's turn";
-            Console.WriteLine(currentPlayerMessage);
+            ///Console.WriteLine(currentPlayerMessage);
 
             //TODO add null logic
-            MenuEntry gameInfoStatus = new MenuEntry(currentPlayerMessage); // different class?
-            gameInfoStatus.Selected += (sender, e) => { Console.WriteLine("You clicked the info text"); };
+//            MenuEntry gameInfoStatus = new MenuEntry(currentPlayerMessage); // different class?
+//            gameInfoStatus.Selected += (sender, e) => { Console.WriteLine("You clicked the info text"); };
 
-            //Vector2 position = new Vector2(100, 150);
-            //Vector2 origin = new Vector2(0, font.LineSpacing / 2);
             var viewport = ScreenManager.GraphicsDevice.Viewport;
-            Vector2 position =  new Vector2((viewport.Width / 2f) - 75, viewport.Height / 100f);
-            Console.WriteLine(position);
+            Vector2 position =  new Vector2((viewport.Width / 2f) - 75, viewport.Height / 100f); //325, 4.8 //Centered on top of board
 
             spriteBatch.Begin();
             spriteBatch.DrawString(font, currentPlayerMessage, position, Color.Red);
             spriteBatch.End();
 
-//            gameInfoStatus.Draw((this as MenuScreen, position, false, gameTime);
         }
 
         /// <summary>

@@ -15,5 +15,7 @@ namespace Chess.Board
         public static FigureColors CurrentPlayerMove { get; set; }
 
         public static GameState savedGameState { get; set; }
+
+        public static bool isAnonymousLogin { get; set; }
     }
 }

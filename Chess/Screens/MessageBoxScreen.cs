@@ -17,9 +17,33 @@ namespace Chess.Screens
         #region Fields
 
         private readonly string message;
-        private readonly string ok = Strings.messagebox_yes;
-        private readonly string cancel = Strings.messagebox_no;
+        private string ok = Strings.messagebox_yes; // TODO change from readonly so we can set it ourselves
+        private string cancel = Strings.messagebox_no;
         private Texture2D gradientTexture;
+
+        public string OkayMessage
+        {
+            get
+            {
+                return ok;
+            }
+            set
+            {
+                ok = value;
+            }
+        }
+
+        public string CancelMessage
+        {
+            get
+            {
+                return cancel;
+            }
+            set
+            {
+                cancel = value;
+            }
+        }
 
         #endregion
 

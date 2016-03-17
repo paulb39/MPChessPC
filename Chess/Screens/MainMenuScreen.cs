@@ -17,8 +17,9 @@ namespace Chess.Screens
             : base(Strings.mainmenu_title)
         {
             // Create our menu entries.
-            MenuEntry playGameMenuEntry = new MenuEntry(Strings.mainmenu_play);
+            MenuEntry playGameMenuEntry = new MenuEntry(Strings.mainmenu_play); //different logic based on if FB or anon - choose AI
             MenuEntry optionsMenuEntry = new MenuEntry(Strings.mainmenu_options);
+            MenuEntry LogoutEntry = new MenuEntry("Logout"); //TODO
             MenuEntry exitMenuEntry = new MenuEntry(Strings.mainmenu_exit);
 
             // Hook up menu event handlers.
@@ -49,7 +50,8 @@ namespace Chess.Screens
         /// </summary>
         private void PlayGameMenuEntrySelected(object sender, EventArgs e)
         {
-            LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+            //LoadingScreen.Load(ScreenManager, true, new GameplayScreen());
+            ScreenManager.AddScreen(new MainGamesScreen());
         }
 
 
